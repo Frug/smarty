@@ -7,9 +7,11 @@
             "email": "drak@zikula.org"
         }
     ],
-    "files: [
-        "Smarty/Smarty.class.php"
-    ],
+    "autoload": {
+        "files": [
+            "Smarty/Smarty.class.php"
+        ]
+    },
     "require": {
 
     }
