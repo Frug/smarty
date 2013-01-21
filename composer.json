@@ -1,0 +1,16 @@
+{
+    "name": "drak/smarty",
+    "description": "Smarty repository for Zikula Core",
+    "authors": [
+        {
+            "name": "Drak",
+            "email": "drak@zikula.org"
+        }
+    ],
+    "files: [
+        "Smarty/Smarty.class.php"
+    ],
+    "require": {
+
+    }
+}
