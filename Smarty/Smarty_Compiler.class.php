@@ -26,7 +26,7 @@
  * @package Smarty
  */
 
-/* $Id: Smarty_Compiler.class.php 3163 2009-06-17 14:39:24Z monte.ohrt $ */
+/* $Id: Smarty_Compiler.class.php 4779 2013-09-30 19:14:32Z Uwe.Tews@googlemail.com $ */
 
 /**
  * Template compiling class
@@ -262,9 +262,13 @@ class Smarty_Compiler extends Smarty {
         reset($this->_folded_blocks);
 
         /* replace special blocks by "{php}" */
-        $source_content = preg_replace_callback($search, create_function('$matches', "return '".$this->_quote_replace($this->left_delimiter).'php' 
-            ."'.str_repeat(\"\n\", substr_count('\$matches[1]', \"\n\")).'".$this->_quote_replace($this->right_delimiter)."';"), $source_content); 
-                                       
+        $source_content = preg_replace_callback($search, create_function ('$matches', "return '"
+                                       . $this->_quote_replace($this->left_delimiter) . 'php'
+                                       . "' . str_repeat(\"\n\", substr_count('\$matches[1]', \"\n\")) .'"
+                                       . $this->_quote_replace($this->right_delimiter)
+                                       . "';")
+                                       , $source_content);
+
         /* Gather all template tags. */
         preg_match_all("~{$ldq}\s*(.*?)\s*{$rdq}~s", $source_content, $_match);
         $template_tags = $_match[1];
@@ -2118,7 +2122,7 @@ class Smarty_Compiler extends Smarty {
                 return null;
 
             case 'template':
-                $compiled_ref = "'$this->_current_file'";
+                $compiled_ref = "'" . addslashes($this->_current_file) . "'";
                 $_max_index = 1;
                 break;
 
