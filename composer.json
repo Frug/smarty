@@ -1,10 +1,10 @@
 {
-    "name": "drak/smarty",
-    "description": "Smarty repository for Zikula Core",
+    "name": "fctechno/smarty",
+    "description": "Smarty v2 legacy repo.",
     "authors": [
         {
-            "name": "Drak",
-            "email": "drak@zikula.org"
+            "name": "Red Team",
+            "email": "redteam@featurecreeptechnology.com"
         }
     ],
     "autoload": {
